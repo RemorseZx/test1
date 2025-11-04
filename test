@@ -51,6 +51,7 @@ local validKeys = {
 	["ALKEY-63QN-0DB4-5KJP"] = true,
 	["UNO-OGZ1"] = true,
 	["UNO-143"] = true,
+	["VINCENT-16HX-9QK1-0BVM"] = true,
 	["JAY-39MF-7XQ5-2LY8"] = true,
 	["NEBULA-54VP-3ZR8-9FT2"] = true,
 	["PRIMO-11JM-8H5L-4TP9"] = true
