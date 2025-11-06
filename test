@@ -42,7 +42,6 @@ local validKeys = {
 	["CHESTER-02VB-UD84-7JH8"] = true,
 	["JAVI-67PL-2XHF-0RZ8"] = true,
 	["JAY-19VP-7ZDL-6FT3"] = true,
-	["PUDAY-48ZJ-0NQD-3YH7"] = true,
 	["DAICHI-28QF-9H2L-6BWC"] = true,
 	["SANTINO-34HX-5QK9-2BVM"] = true,
 	["DEVIL-21MF-8XQ1-7LY9"] = true,
