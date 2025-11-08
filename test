@@ -3806,7 +3806,7 @@ Instance.new("UICorner", title).CornerRadius = UDim.new(0, 8)
 
 -- List of items to buy
 local items = {
-    {"Pistol", "Pistol"},
+    {"Suppressed Pistols", "Suppressed Pistols"},
     {"Deagle", "Deagle"}
 }
 
@@ -9022,7 +9022,7 @@ Instance.new("UICorner", sendButton).CornerRadius = UDim.new(0, 6)
 sendButton.MouseButton1Click:Connect(function()
     local amount = tonumber(amountBox.Text)
     if amount then
-        game:GetService("ReplicatedStorage").GunStoreFolder.BuyTool:FireServer("Pistol", -amount)
+        game:GetService("ReplicatedStorage").GunStoreFolder.BuyTool:FireServer("Suppressed Pistols", -amount)
     else
         warn("Invalid amount!")
     end
