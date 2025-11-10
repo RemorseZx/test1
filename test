@@ -55,7 +55,6 @@ local validKeys = {
 	["JAYPIE-28VF-2QX6-7ZL3"] = true,
 	["XTZ-88ZJ-2NQD-6YH5"] = true,
 	["VEL-41BR-5JX2-3LQ7"] = true,
-	["PRIMO-11JM-8H5L-4TP9"] = true,
 }
 
 -- Webhook info
