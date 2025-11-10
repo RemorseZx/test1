@@ -35,7 +35,6 @@ local validKeys = {
 	["KIOSHI-86MF-4C2J-9XQ5"] = true,
 	["DRAZ-12ZK-8DR4-5QX1"] = true,
 	["CLYDE-24HX-3QK7-2BVM"] = true,
-	["IZZY-72BR-0JX5-1LQ4"] = true,
 	["CHAM-36JM-5H8L-9TP2"] = true,
 	["YOHAN-03DL-6F9T-7RY1"] = true,
 	["TAKO-57QN-1ZB4-3HKP"] = true,
