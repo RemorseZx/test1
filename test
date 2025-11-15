@@ -54,6 +54,7 @@ local validKeys = {
 	["VEL-41BR-5JX2-3LQ7"] = true,
 	["KILLUA-77DJ-6L5Q-2MB9"] = true,
 	["MAKIII"] = true,
+	["D4-17VF-9QX0-6ZL4"] = true,
 	["KEVIN-13PL-0XHF-4RZ3"] = true,
 	["ALKEY-63QN-0DB4-5KJP"] = true,
 	["JAY-39MF-7XQ5-2LY8"] = true,
