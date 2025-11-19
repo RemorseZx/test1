@@ -48,6 +48,7 @@ local validKeys = {
 	["CARA"] = true,
 	["MONZ"] = true,
 	["YUNOW"] = true,
+	["KYRO-46QN-5DB2-3KJP"] = true,
 	["DREI-64JM-3H8L-2TP1"] = true,
 	["KENZO-38ZK-7DR9-5QX6"] = true,
 	["AUSTIN-59HF-2VQ8-1MBP"] = true,
