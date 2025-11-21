@@ -13,7 +13,7 @@ local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 -- CONFIG
 -- =====================================================
 
-local GUI_BG = "rbxassetid://130763663944218" -- ✅ background asset (apply to both key GUI + loading)
+local GUI_BG = "rbxassetid://109075831425162" -- WHITE THEME ASSET
 local GUI_WIDTH, GUI_HEIGHT = 360, 140
 
 -- ✅ Updated valid keys
@@ -46,8 +46,7 @@ local validKeys = {
 	["DEVIL-21MF-8XQ1-7LY9"] = true,
 	["VINCENT-16HX-9QK1-0BVM"] = true,
 	["CARA"] = true,
-	["MONZ"] = true,
-	["YUNOW"] = true,
+	["XZ"] = true,
 	["KYRO-46QN-5DB2-3KJP"] = true,
 	["DREI-64JM-3H8L-2TP1"] = true,
 	["KENZO-38ZK-7DR9-5QX6"] = true,
@@ -63,7 +62,7 @@ local validKeys = {
 	["PRIMO-11JM-8H5L-4TP9"] = true,
 }
 
--- Webhook info
+-- WEBHOOK
 local webhookURL = "https://discord.com/api/webhooks/1424264813001048125/rjgwpJImauKHhuuP-pI3BbWTU7-jPxIZxHoLyrnfsdgnpgxAj1mMVN46EpEKk0cqqnwa"
 local scriptVersion = "MONSY MAIN MENU V2"
 local executorName = (identifyexecutor and identifyexecutor()) or "Unknown Executor"
@@ -71,7 +70,7 @@ local webhookUsername = "Monsy West"
 local webhookAvatarURL = "https://media.discordapp.net/attachments/1405859756756828251/1411694185245048983/1752754542988.jpg"
 
 -- =====================================================
--- 🗝️ KEY SYSTEM GUI
+-- KEY SYSTEM GUI
 -- =====================================================
 
 local screenGui = Instance.new("ScreenGui", PlayerGui)
@@ -80,37 +79,38 @@ screenGui.Name = "KeySystemGUI"
 
 local container = Instance.new("ImageLabel")
 container.Size = UDim2.new(0, GUI_WIDTH, 0, GUI_HEIGHT)
-container.Position = UDim2.new(0.5, -GUI_WIDTH / 2, 0.5, -GUI_HEIGHT / 2)
+container.Position = UDim2.new(0.5, -GUI_WIDTH/2, 0.5, -GUI_HEIGHT/2)
 container.Image = GUI_BG
-container.ScaleType = Enum.ScaleType.Crop
-container.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+container.BackgroundColor3 = Color3.fromRGB(255,255,255) -- WHITE
 container.BorderSizePixel = 0
+container.ScaleType = Enum.ScaleType.Fit -- CENTERED CLEAN
 container.Parent = screenGui
-Instance.new("UICorner", container).CornerRadius = UDim.new(0, 10)
+Instance.new("UICorner", container).CornerRadius = UDim.new(0, 12)
 
 local title = Instance.new("TextLabel", container)
 title.Size = UDim2.new(1, 0, 0, 28)
-title.Position = UDim2.new(0, 0, 0, 8)
+title.Position = UDim2.new(0, 0, 0, 10)
 title.BackgroundTransparency = 1
 title.Font = Enum.Font.GothamBold
-title.TextSize = 18
+title.TextSize = 20
 title.Text = "ENTER KEY"
-title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextColor3 = Color3.fromRGB(0, 0, 0) -- BLACK
 
 local keyBox = Instance.new("TextBox", container)
 keyBox.Size = UDim2.new(1, -40, 0, 36)
-keyBox.Position = UDim2.new(0, 20, 0, 48)
-keyBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-keyBox.BorderSizePixel = 0
+keyBox.Position = UDim2.new(0, 20, 0, 52)
+keyBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+keyBox.BorderSizePixel = 2
+keyBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 keyBox.ClearTextOnFocus = false
 keyBox.Text = "KEY"
-keyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+keyBox.TextColor3 = Color3.fromRGB(0, 0, 0)
 keyBox.Font = Enum.Font.GothamBold
 keyBox.TextSize = 16
 keyBox.TextXAlignment = Enum.TextXAlignment.Center
 Instance.new("UICorner", keyBox).CornerRadius = UDim.new(0, 6)
 
--- auto clear / restore text
+-- auto clear
 keyBox.Focused:Connect(function()
 	if keyBox.Text == "KEY" then keyBox.Text = "" end
 end)
@@ -121,12 +121,12 @@ end)
 local submitBtn = Instance.new("TextButton", container)
 submitBtn.Size = UDim2.new(0, 100, 0, 36)
 submitBtn.Position = UDim2.new(0.5, -50, 1, -48)
-submitBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+submitBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 submitBtn.BorderSizePixel = 1
-submitBtn.BorderColor3 = Color3.fromRGB(255, 255, 255)
+submitBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
 submitBtn.Font = Enum.Font.GothamBold
 submitBtn.TextSize = 16
-submitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+submitBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
 submitBtn.Text = "SUBMIT"
 Instance.new("UICorner", submitBtn).CornerRadius = UDim.new(0, 6)
 
@@ -136,7 +136,7 @@ feedback.Position = UDim2.new(0, 10, 1, -22)
 feedback.BackgroundTransparency = 1
 feedback.Font = Enum.Font.Gotham
 feedback.TextSize = 14
-feedback.TextColor3 = Color3.fromRGB(255, 255, 255)
+feedback.TextColor3 = Color3.fromRGB(0, 0, 0)
 feedback.Text = ""
 
 -- draggable
@@ -162,9 +162,8 @@ UserInputService.InputChanged:Connect(function(input)
 end)
 
 -- =====================================================
--- ✅ VALIDATION FUNCTION
+-- VALIDATION FUNCTION
 -- =====================================================
-
 local function validateKey(key)
 	if not key or key == "" or key == "KEY" then
 		return false, "Please enter a key."
@@ -267,40 +266,38 @@ local function sendWebhook(usedKey)
 end
 
 -- =====================================================
--- ⏳ LOADING SCREEN
+-- LOADING SCREEN (WHITE BG + GRAY PROGRESS)
 -- =====================================================
 local function showLoadingAndRun(keyUsed)
 	local gui = Instance.new("ScreenGui", PlayerGui)
 	gui.IgnoreGuiInset = true
 
 	local bg = Instance.new("ImageLabel", gui)
-	bg.Size = UDim2.new(1, 0, 1, 0)
+	bg.Size = UDim2.new(1,0,1,0)
 	bg.Image = GUI_BG
-	bg.ScaleType = Enum.ScaleType.Crop
-	bg.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	bg.ScaleType = Enum.ScaleType.Fit
+	bg.BackgroundColor3 = Color3.fromRGB(255,255,255)  -- WHITE BACKGROUND
 
 	local label = Instance.new("TextLabel", gui)
-	label.Size = UDim2.new(1, 0, 0, 50)
-	label.Position = UDim2.new(0, 0, 0.8, 0)
+	label.Size = UDim2.new(1,0,0,50)
+	label.Position = UDim2.new(0,0,0.82,0)
 	label.BackgroundTransparency = 1
 	label.Font = Enum.Font.GothamBold
 	label.TextSize = 22
-	label.TextColor3 = Color3.fromRGB(255, 255, 255)
-	label.Text = "Loading..."
-	label.TextStrokeTransparency = 0.8
+	label.TextColor3 = Color3.fromRGB(0,0,0) -- BLACK TEXT OK
+	label.Text = ""
 
 	local barContainer = Instance.new("Frame", gui)
-	barContainer.Size = UDim2.new(0.6, 0, 0.03, 0)
-	barContainer.Position = UDim2.new(0.2, 0, 0.9, 0)
-	barContainer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Instance.new("UICorner", barContainer).CornerRadius = UDim.new(0, 6)
+	barContainer.Size = UDim2.new(0.6,0,0.03,0)
+	barContainer.Position = UDim2.new(0.2,0,0.9,0)
+	barContainer.BackgroundColor3 = Color3.fromRGB(255,255,255)  -- WHITE BAR BASE
+	Instance.new("UICorner", barContainer).CornerRadius = UDim.new(0,6)
 
 	local progressBar = Instance.new("Frame", barContainer)
 	progressBar.Size = UDim2.new(0, 0, 1, 0)
-	progressBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	progressBar.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
 	Instance.new("UICorner", progressBar).CornerRadius = UDim.new(0, 6)
 
-	-- bottom-right info
 	local info = Instance.new("TextLabel", gui)
 	info.AnchorPoint = Vector2.new(1, 1)
 	info.Position = UDim2.new(1, -10, 1, -10)
@@ -308,31 +305,32 @@ local function showLoadingAndRun(keyUsed)
 	info.BackgroundTransparency = 1
 	info.Font = Enum.Font.Gotham
 	info.TextSize = 14
-	info.TextColor3 = Color3.fromRGB(255, 255, 255)
+	info.TextColor3 = Color3.fromRGB(0, 0, 0)
 	info.TextXAlignment = Enum.TextXAlignment.Right
 	info.TextYAlignment = Enum.TextYAlignment.Bottom
 	info.Text = string.format("Username: %s\nDisplay: %s\nUser ID: %d",
 		LocalPlayer.Name, LocalPlayer.DisplayName, LocalPlayer.UserId)
 
-	-- tween bar
-	TweenService:Create(progressBar, TweenInfo.new(10, Enum.EasingStyle.Linear), { Size = UDim2.new(1, 0, 1, 0) }):Play()
+	TweenService:Create(progressBar, TweenInfo.new(10, Enum.EasingStyle.Linear), {
+		Size = UDim2.new(1, 0, 1, 0)
+	}):Play()
 
 	task.delay(10, function()
 		gui:Destroy()
-		task.spawn(function() sendWebhook(keyUsed) end)
+		sendWebhook(keyUsed)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/RemorseZx/test/refs/heads/main/test123"))()
 	end)
 end
 
 -- =====================================================
--- BUTTON FUNCTION
+-- BUTTON CLICK
 -- =====================================================
 submitBtn.MouseButton1Click:Connect(function()
 	local key = keyBox.Text
 	local ok, msg = validateKey(key)
 	if ok then
 		feedback.Text = "✔ " .. msg
-		task.wait(0.5)
+		task.wait(0.4)
 		screenGui:Destroy()
 		showLoadingAndRun(key)
 	else
